@@ -42,4 +42,9 @@ for i in ${published[@]}; do
 done
 
 
-aptly task run -filename=".$$"; rm .$$
+if [[ -s .$$ ]]; then
+  aptly task run -filename=".$$"; rm .$$* 
+else
+  echo 'Task list is empty.Nothing to do'; rm .$$*
+  exit 0 
+fi
