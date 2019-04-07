@@ -22,6 +22,6 @@ if [[ -f ${TASKLIST} ]]; then
   rm ${TASKLIST};
 fi
 
-for i in ${published[@]}; do 
+for i in ${published[@]}; do
   echo "mirror create ${i} ${URL} ${i} main" >> ${TASKLIST}
 done
